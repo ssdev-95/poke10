@@ -17,9 +17,11 @@
 
 body {
   font-family:monospace;
-
+  background: var(--background);
   width: 100vw;
   height: 100vh;
+
+  font-family: 'Red Hat Text';
 }
 
 a {
