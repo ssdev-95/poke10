@@ -1,0 +1,48 @@
+.container {
+    height: 50px;
+    max-width: 85%;
+    width: 25rem;
+
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.container > input {
+    width: 15rem;
+
+    color: var(--half-black);
+
+    padding-left: 1rem;
+    font-size: 1rem;
+
+    border-radius: 18px;
+    border: 0;
+}
+
+.container > a {
+    height: 100%;
+    width: 5.8rem;
+
+    display: flex;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-radius: 80px;
+
+    color: white;
+    background: var(--half-black);
+}
+
+.container > a > img {
+    height: 85%;
+    width: 40px;
+}
+
+@media(min-width: 801px) {
+    .container {
+        height: 2.72rem;
+        width: 23rem;
+    }
+}
