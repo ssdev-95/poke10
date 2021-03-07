@@ -1,13 +1,11 @@
-import React from 'react'
+export default function Pokemon(pokename) {
+    const Pokedex = require('pokeapi-js-wrapper')
+    const dex = new Pokedex.Pokedex()
 
-export default function PokemonContainer(props) {
-    return ({
-        idNumber: 6,
-        name: 'Charizard',
-        type: {
-            type1: 'fire',
-            type2: 'flying'
-        },
-        assetUrl: 'drawable/pokeball.png'
-    })
+    const pokemon = dex.getPokemonByName(pokename)
+                       .then(response => {
+                           console.log(response)
+                       })
+    
+    return (pokemon)
 }
