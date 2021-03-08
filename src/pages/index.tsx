@@ -6,6 +6,7 @@ import styles from '../styles/pages/Home.module.css';
 
 export default function Home() {
   return (
+    
     <div className={styles.container}>
       <PokemonDetailsModal />
       <h1 className={styles.logo}>poke10</h1>

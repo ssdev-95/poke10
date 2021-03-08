@@ -1,22 +1,29 @@
-import React, {useContext} from 'react';
-import styles from '../styles/components/PokemonDetailsModal.module.css';
+import React, {useContext, useEffect} from 'react';
 import { PokemonDetailsContext } from '../contexts/PokemonDetailsModalContext';
-import Pokemon from './Pokemon';
+import { SearchbarContext } from '../contexts/SearchbarContext';
+
+import styles from '../styles/components/PokemonDetailsModal.module.css';
 
 export default function PokemonDetailsModal() {
+    const { query } = useContext(SearchbarContext)
+    const {isDetailsModalOpen, getQuery, toggleModal, poke} = useContext(PokemonDetailsContext)
+    //const pokemon = Pokemon()
+
     const pokemon = {
-        id: '006',
-        name: 'charizard',
+        id: '004',
+        name: query,
+        picUrl: 'drawable/pokeball.png',
         types: {
             type1: 'fire',
             type2: 'flying'
         },
-        bio: 'Dragon like pokemon with flaming tail.',
-        picUrl: 'drawable/pokeball.png'
+        bio: 'A dragon like animal'
     }
 
-    const {isDetailsModalOpen, toggleModal} = useContext(PokemonDetailsContext)
 
+    useEffect(()=>{
+        getQuery(query)
+    }, [query])
 
     return (
         (isDetailsModalOpen &&(
@@ -35,3 +42,6 @@ export default function PokemonDetailsModal() {
         </div>))
     )
 }
+
+/*
+*/

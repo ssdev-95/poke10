@@ -5,11 +5,11 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return(
-    <SearchbarContextProvider>
       <PokemonDetailsContextProvider>
+        <SearchbarContextProvider>
         <Component {...pageProps} />
-      </PokemonDetailsContextProvider>
-    </SearchbarContextProvider>
+        </SearchbarContextProvider>
+      </ PokemonDetailsContextProvider>
   )
 }
 
