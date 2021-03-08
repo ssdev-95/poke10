@@ -1,13 +1,13 @@
 import React, {useContext, useEffect} from 'react';
 import { PokemonDetailsContext } from '../contexts/PokemonDetailsModalContext';
 import { SearchbarContext } from '../contexts/SearchbarContext';
+import { getPokemon } from './Pokemon';
 
 import styles from '../styles/components/PokemonDetailsModal.module.css';
 
 export default function PokemonDetailsModal() {
     const { query } = useContext(SearchbarContext)
     const {isDetailsModalOpen, getQuery, toggleModal, poke} = useContext(PokemonDetailsContext)
-    //const pokemon = Pokemon()
 
     const pokemon = {
         id: '004',

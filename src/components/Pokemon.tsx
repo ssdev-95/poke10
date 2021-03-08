@@ -23,17 +23,26 @@ export const Pokemon = () => {
     return (pokemon)
 }*/
 
-export const getPokemon = (query: string) => {
-    const pokeUrl = `https://pokeapi.co/api/v2/pokemon/${query}`
+const getPokemonData = async (url: string) => {
+    const response = await fetch(url)
+    const data = await response.json()
 
-    fetch(pokeUrl)
-                .then(res => res.json())
-                .then(data => {
-                    let pokemon = data.results
-                    console.log(pokemon)
-                    return pokemon
-                })
-                .catch(error => console.log(error.message))
+    return {
+        id: data.id,
+        name: data.name,
+        types: data.types,
+        sprites: data.sprites
+    }
+}
+
+export const getPokemon = async (query: string) => {
+    const pokeUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=1118'
     
-    console.log(query)
+    const response = await fetch(pokeUrl)
+    const data = await response.json()
+    const result = data.results
+
+    return result.map(pokemon=>{
+        pokemon.name===query && (getPokemonData(pokemon.url))
+    })
 }
