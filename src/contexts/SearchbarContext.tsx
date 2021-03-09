@@ -16,13 +16,17 @@ export const SearchbarContextProvider = ({children}: ProviderProps) => {
     const { toggleModal } = useContext(PokemonDetailsContext)
     const [ query, setQuery ] = useState('charizard')
 
+    const formatQuery = (query) => {
+        return query.replace(/([A-Z])\g/, '$1').toLowerCase()
+    }
+
     const submit = (data) => {
         window.addEventListener('click',e => {
             e.preventDefault()
         })
 
         toggleModal()
-        setQuery(data.pokename)
+        setQuery(formatQuery(data.pokename))
         //setQuery(JSON.stringify(data.pokename))
         //console.log(data.pokename)
     }

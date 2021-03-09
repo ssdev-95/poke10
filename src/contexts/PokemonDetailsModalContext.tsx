@@ -1,4 +1,3 @@
-import { url } from 'node:inspector';
 import { ReactNode, createContext, useContext, useState, useEffect } from 'react';
 import { getPokemon, getPokemonData } from '../components/Pokemon';
 
@@ -70,7 +69,7 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
                 picUrl: sprites.front_default,
                 types: {
                     type1: types[0].type.name,
-                    type2: types.length>0 ? types[1].type.name : types[0].type.name
+                    type2: types[1]?.type.name
                 },
                 bio: 'Another pokemon'
             })
