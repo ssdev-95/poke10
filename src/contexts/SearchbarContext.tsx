@@ -14,7 +14,7 @@ export const SearchbarContext = createContext({} as SearchbarContextData)
 
 export const SearchbarContextProvider = ({children}: ProviderProps) => {
     const { toggleModal } = useContext(PokemonDetailsContext)
-    const [ query, setQuery ] = useState('charizard')
+    const [ query, setQuery ] = useState('')
 
     const formatQuery = (query) => {
         return query.replace(/([A-Z])\g/, '$1').toLowerCase()
