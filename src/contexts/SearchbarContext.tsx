@@ -14,7 +14,7 @@ export const SearchbarContext = createContext({} as SearchbarContextData)
 
 export const SearchbarContextProvider = ({children}: ProviderProps) => {
     const { toggleModal } = useContext(PokemonDetailsContext)
-    const [ query, setQuery ] = useState('pikachu')
+    const [ query, setQuery ] = useState('charizard')
 
     const submit = (data) => {
         window.addEventListener('click',e => {

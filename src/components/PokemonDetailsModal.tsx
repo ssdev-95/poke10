@@ -9,18 +9,6 @@ export default function PokemonDetailsModal() {
     const { query } = useContext(SearchbarContext)
     const {isDetailsModalOpen, getQuery, toggleModal, poke} = useContext(PokemonDetailsContext)
 
-    const pokemon = {
-        id: '004',
-        name: query,
-        picUrl: 'drawable/pokeball.png',
-        types: {
-            type1: 'fire',
-            type2: 'flying'
-        },
-        bio: 'A dragon like animal'
-    }
-
-
     useEffect(()=>{
         getQuery(query)
     }, [query])
@@ -29,15 +17,15 @@ export default function PokemonDetailsModal() {
         (isDetailsModalOpen &&(
         <div className={styles.overlay}>
             <div className={styles.modal}>
-                <p className={styles.pokename}>{pokemon.name}</p>
-                <p className={styles.pokeid}>{pokemon.id}</p>
+                <p className={styles.pokename}>{poke.name}</p>
+                <p className={styles.pokeid}>{poke.id}</p>
                 <a className={styles.deleteButton} href="#" onClick={toggleModal}>x</a>
-                <img className={styles.pokepic} src={pokemon.picUrl} alt=""/>
+                <img className={styles.pokepic} src={poke.picUrl} alt=""/>
                 <div className={styles.poketypes}>
-                    <p className={styles.type1}>{pokemon.types.type1}</p>
-                    <p className={styles.type2}>{pokemon.types.type2}</p>
+                    <p className={styles.type1}>{poke.types.type1}</p>
+                    <p className={styles.type2}>{poke.types.type2}</p>
                 </div>
-                <p className={styles.pokebio}>{pokemon.bio}</p>
+                <p className={styles.pokebio}>{poke.bio}</p>
             </div>
         </div>))
     )

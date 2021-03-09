@@ -23,26 +23,23 @@ export const Pokemon = () => {
     return (pokemon)
 }*/
 
-const getPokemonData = async (url: string) => {
+export const getPokemonData = async (url: string) => {
     const response = await fetch(url)
     const data = await response.json()
 
-    return {
-        id: data.id,
-        name: data.name,
-        types: data.types,
-        sprites: data.sprites
-    }
+    return data
 }
 
-export const getPokemon = async (query: string) => {
+export const getPokemon = async () => {
     const pokeUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=1118'
     
     const response = await fetch(pokeUrl)
     const data = await response.json()
     const result = data.results
 
-    return result.map(pokemon=>{
-        pokemon.name===query && (getPokemonData(pokemon.url))
-    })
+    return result
+
+    /*return result.map(pokemon=>{
+        pokemon.name===query && (console.log(pokemon.url))
+    })*/
 }
