@@ -1,0 +1,52 @@
+.cardContainer {
+    background: #f0f2f5;
+
+    height: 100px;
+    width: 100px;
+
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: .45rem;
+}
+
+.pokename {
+    margin-top: .25rem;
+    font-size: .75rem;
+    font-weight: 700;
+    color:var(--half-black);
+}
+
+.pokepic {
+    height: 45px;
+    width: 45px;
+}
+
+.types {
+    color: var(--text);
+
+    font-size: .65rem;
+    font-weight: 700;
+
+    border: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.types p {
+    background: var(--half-black);
+    border-radius: 6px;
+
+    padding: .08rem .35rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

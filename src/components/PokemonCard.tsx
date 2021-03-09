@@ -1,7 +1,16 @@
 import React from 'react'
 
-export default function PokemonCard() {
+import styles from '../styles/components/PokemonCard.module.css';
+
+export function PokemonCard(props) {
     return (
-        <div></div>
+        <div className={styles.cardContainer}>
+            <p className={styles.pokename}>{props.name}</p>
+            <img className={styles.pokepic} src={props.url} alt=""/>
+            <div className={styles.types}>
+                <p>{props.type1}</p>
+                <p>{props.type2}</p>
+            </div>
+        </div>
     )
 }

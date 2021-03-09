@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useState, useEffect } from 'react';
+import { ReactNode, createContext, useState, useEffect } from 'react';
 import { getPokemon, getPokemonData } from '../components/Pokemon';
 
 interface PokeData {
@@ -29,12 +29,11 @@ export const PokemonDetailsContext = createContext({} as PokemonDetailsModalCont
 export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
     const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false)
     const [ pokeDataUrl, setPokeDataUrl ] = useState('')
-    const [ pokeData, setPokeData ] = useState(null)
     const [newQuery, setNewQuery] = useState('')
 
     const pokemon = {
         id: '004',
-        name: newQuery,
+        name: 'charizard',
         picUrl: 'drawable/pokeball.png',
         types: {
             type1: 'fire',
@@ -62,7 +61,6 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
     useEffect( () => {
         getPokemonData(pokeDataUrl).then(res => {
             const { id, name, types, sprites } = res
-            console.log(res)
             setPoke({
                 id: id,
                 name: name,
@@ -73,7 +71,7 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
                 },
                 bio: 'Another pokemon'
             })
-        })
+        }).catch(err=>{console.log(err)})
     }, [pokeDataUrl])
 
     const toggleModal = () => {
