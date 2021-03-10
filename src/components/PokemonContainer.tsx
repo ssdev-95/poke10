@@ -25,21 +25,19 @@ export default function PokemonContainer() {
     }, [])
 
     useEffect(()=>{
-        let dex = []
         pokedex.map(pokemon=>{
             getPokemonData(pokemon.url).then(res=>{
                 const {id, name, sprites, types} = res
-                dex.push({
+                setDex([...dex, {
                     id: id,
                     name: name,
                     pic: sprites.front_default,
                     type1: types[0].type.name,
                     type2: types[1]?.type.name
-                })
+                }])
             })
         })
-        setDex(dex)
-    }, [pokedex])
+    }, [dex])
 
     return (
         <div className={styles.container}>
