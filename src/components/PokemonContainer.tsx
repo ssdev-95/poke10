@@ -7,7 +7,7 @@ export default function PokemonContainer() {
     const [dex, setDex] = useState([]) 
     const [pokedex, setPokedex] = useState([]) 
 
-    const populateDex = () => {
+    /*const populateDex = () => {
         dex.forEach(mon => {
             console.log(`{ 
                 ${mon.name} 
@@ -16,7 +16,7 @@ export default function PokemonContainer() {
                 ${mon.types[1]?.type.name}
             }`)
         })
-     }
+     }*/
 
     useEffect(()=>{
         getPokemons().then(res=>{
