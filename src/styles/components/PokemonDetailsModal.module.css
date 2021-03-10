@@ -45,7 +45,7 @@
     padding: .1rem .5rem;
     margin-top: .5rem;
     margin-left: .5rem;
-    background: red;
+    background: var(--half-black);
 
     color: var(--text);
 

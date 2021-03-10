@@ -32,14 +32,14 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
     const [newQuery, setNewQuery] = useState('')
 
     const pokemon = {
-        id: '004',
+        id: '6',
         name: 'charizard',
-        picUrl: 'drawable/pokeball.png',
+        picUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png',
         types: {
             type1: 'fire',
             type2: 'flying'
         },
-        bio: 'A dragon like animal'
+        bio: 'A dragon like pokemon'
     }
 
     const [poke, setPoke] = useState(pokemon)

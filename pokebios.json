@@ -1,0 +1,201 @@
+[
+    {"name":"bulbasaur","bio":"https://pokeapi.co/api/v2/pokemon/1/"},
+
+    {"name":"ivysaur","bio":"https://pokeapi.co/api/v2/pokemon/2/"},
+
+    {"name":"venusaur","bio":"https://pokeapi.co/api/v2/pokemon/3/"},
+
+    {"name":"charmander","bio":"https://pokeapi.co/api/v2/pokemon/4/"},
+    
+    {"name":"charmeleon","bio":"https://pokeapi.co/api/v2/pokemon/5/"},
+
+    {"name":"charizard","bio":"https://pokeapi.co/api/v2/pokemon/6/"},
+    
+    {"name":"squirtle","bio":"https://pokeapi.co/api/v2/pokemon/7/"},
+    
+    {"name":"wartortle","bio":"https://pokeapi.co/api/v2/pokemon/8/"},
+
+    {"name":"blastoise","bio":"https://pokeapi.co/api/v2/pokemon/9/"},
+    
+    {"name":"caterpie","bio":"https://pokeapi.co/api/v2/pokemon/10/"},
+    
+    {"name":"metapod","bio":"https://pokeapi.co/api/v2/pokemon/11/"},
+    
+    {"name":"butterfree","bio":"https://pokeapi.co/api/v2/pokemon/12/"},
+    
+    {"name":"weedle","bio":"https://pokeapi.co/api/v2/pokemon/13/"},
+    
+    {"name":"kakuna","bio":"https://pokeapi.co/api/v2/pokemon/14/"},
+    
+    {"name":"beedrill","bio":"https://pokeapi.co/api/v2/pokemon/15/"},
+    
+    {"name":"pidgey","bio":"https://pokeapi.co/api/v2/pokemon/16/"},
+    
+    {"name":"pidgeotto","bio":"https://pokeapi.co/api/v2/pokemon/17/"},
+    
+    {"name":"pidgeot","bio":"https://pokeapi.co/api/v2/pokemon/18/"},
+    
+    {"name":"rattata","bio":"https://pokeapi.co/api/v2/pokemon/19/"},
+    
+    {"name":"raticate","bio":"https://pokeapi.co/api/v2/pokemon/20/"},
+    
+    {"name":"spearow","bio":"https://pokeapi.co/api/v2/pokemon/21/"},
+    
+    {"name":"fearow","bio":"https://pokeapi.co/api/v2/pokemon/22/"},
+    
+    {"name":"ekans","bio":"https://pokeapi.co/api/v2/pokemon/23/"},
+    
+    {"name":"arbok","bio":"https://pokeapi.co/api/v2/pokemon/24/"},
+    
+    {"name":"pikachu","bio":"https://pokeapi.co/api/v2/pokemon/25/"},
+    
+    {"name":"raichu","bio":"https://pokeapi.co/api/v2/pokemon/26/"},
+    
+    {"name":"sandshrew","bio":"https://pokeapi.co/api/v2/pokemon/27/"},
+    
+    {"name":"sandslash","bio":"https://pokeapi.co/api/v2/pokemon/28/"},
+    
+    {"name":"nidoran-f","bio":"https://pokeapi.co/api/v2/pokemon/29/"},
+    
+    {"name":"nidorina","bio":"https://pokeapi.co/api/v2/pokemon/30/"},
+    
+    {"name":"nidoqueen","bio":"https://pokeapi.co/api/v2/pokemon/31/"},
+    
+    {"name":"nidoran-m","bio":"https://pokeapi.co/api/v2/pokemon/32/"},
+    
+    {"name":"nidorino","bio":"https://pokeapi.co/api/v2/pokemon/33/"},
+    
+    {"name":"nidoking","bio":"https://pokeapi.co/api/v2/pokemon/34/"},
+    
+    {"name":"clefairy","bio":"https://pokeapi.co/api/v2/pokemon/35/"},
+    
+    {"name":"clefable","bio":"https://pokeapi.co/api/v2/pokemon/36/"},
+    
+    {"name":"vulpix","bio":"https://pokeapi.co/api/v2/pokemon/37/"},
+    
+    {"name":"ninetales","bio":"https://pokeapi.co/api/v2/pokemon/38/"},
+    
+    {"name":"jigglypuff","bio":"https://pokeapi.co/api/v2/pokemon/39/"},
+    
+    {"name":"wigglytuff","bio":"https://pokeapi.co/api/v2/pokemon/40/"},
+    
+    {"name":"zubat","bio":"https://pokeapi.co/api/v2/pokemon/41/"},
+    
+    {"name":"golbat","bio":"https://pokeapi.co/api/v2/pokemon/42/"},
+    
+    {"name":"oddish","bio":"https://pokeapi.co/api/v2/pokemon/43/"},
+    
+    {"name":"gloom","bio":"https://pokeapi.co/api/v2/pokemon/44/"},
+    
+    {"name":"vileplume","bio":"https://pokeapi.co/api/v2/pokemon/45/"},
+    
+    {"name":"paras","bio":"https://pokeapi.co/api/v2/pokemon/46/"},
+    
+    {"name":"parasect","bio":"https://pokeapi.co/api/v2/pokemon/47/"},
+    
+    {"name":"venonat","bio":"https://pokeapi.co/api/v2/pokemon/48/"},
+    
+    {"name":"venomoth","bio":"https://pokeapi.co/api/v2/pokemon/49/"},
+    
+    {"name":"diglett","bio":"https://pokeapi.co/api/v2/pokemon/50/"},
+    
+    {"name":"dugtrio","bio":"https://pokeapi.co/api/v2/pokemon/51/"},
+    
+    {"name":"meowth","bio":"https://pokeapi.co/api/v2/pokemon/52/"},
+    
+    {"name":"persian","bio":"https://pokeapi.co/api/v2/pokemon/53/"},
+    
+    {"name":"psyduck","bio":"https://pokeapi.co/api/v2/pokemon/54/"},
+    
+    {"name":"golduck","bio":"https://pokeapi.co/api/v2/pokemon/55/"},
+    
+    {"name":"mankey","bio":"https://pokeapi.co/api/v2/pokemon/56/"},
+    
+    {"name":"primeape","bio":"https://pokeapi.co/api/v2/pokemon/57/"},
+    
+    {"name":"growlithe","bio":"https://pokeapi.co/api/v2/pokemon/58/"},
+    
+    {"name":"arcanine","bio":"https://pokeapi.co/api/v2/pokemon/59/"},
+    
+    {"name":"poliwag","bio":"https://pokeapi.co/api/v2/pokemon/60/"},
+    
+    {"name":"poliwhirl","bio":"https://pokeapi.co/api/v2/pokemon/61/"},
+    
+    {"name":"poliwrath","bio":"https://pokeapi.co/api/v2/pokemon/62/"},
+    
+    {"name":"abra","bio":"https://pokeapi.co/api/v2/pokemon/63/"},
+    
+    {"name":"kadabra","bio":"https://pokeapi.co/api/v2/pokemon/64/"},
+    
+    {"name":"alakazam","bio":"https://pokeapi.co/api/v2/pokemon/65/"},
+    
+    {"name":"machop","bio":"https://pokeapi.co/api/v2/pokemon/66/"},
+    
+    {"name":"machoke","bio":"https://pokeapi.co/api/v2/pokemon/67/"},
+    
+    {"name":"machamp","bio":"https://pokeapi.co/api/v2/pokemon/68/"},
+    
+    {"name":"bellsprout","bio":"https://pokeapi.co/api/v2/pokemon/69/"},
+    
+    {"name":"weepinbell","bio":"https://pokeapi.co/api/v2/pokemon/70/"},
+    
+    {"name":"victreebel","bio":"https://pokeapi.co/api/v2/pokemon/71/"},
+    
+    {"name":"tentacool","bio":"https://pokeapi.co/api/v2/pokemon/72/"},
+    
+    {"name":"tentacruel","bio":"https://pokeapi.co/api/v2/pokemon/73/"},
+    
+    {"name":"geodude","bio":"https://pokeapi.co/api/v2/pokemon/74/"},
+    
+    {"name":"graveler","bio":"https://pokeapi.co/api/v2/pokemon/75/"},
+    
+    {"name":"golem","bio":"https://pokeapi.co/api/v2/pokemon/76/"},
+    
+    {"name":"ponyta","bio":"https://pokeapi.co/api/v2/pokemon/77/"},
+    
+    {"name":"rapidash","bio":"https://pokeapi.co/api/v2/pokemon/78/"},
+    
+    {"name":"slowpoke","bio":"https://pokeapi.co/api/v2/pokemon/79/"},
+    
+    {"name":"slowbro","bio":"https://pokeapi.co/api/v2/pokemon/80/"},
+    
+    {"name":"magnemite","bio":"https://pokeapi.co/api/v2/pokemon/81/"},
+    
+    {"name":"magneton","bio":"https://pokeapi.co/api/v2/pokemon/82/"},
+    
+    {"name":"farfetchd","bio":"https://pokeapi.co/api/v2/pokemon/83/"},
+    
+    {"name":"doduo","bio":"https://pokeapi.co/api/v2/pokemon/84/"},
+    
+    {"name":"dodrio","bio":"https://pokeapi.co/api/v2/pokemon/85/"},
+    
+    {"name":"seel","bio":"https://pokeapi.co/api/v2/pokemon/86/"},
+    
+    {"name":"dewgong","bio":"https://pokeapi.co/api/v2/pokemon/87/"},
+    
+    {"name":"grimer","bio":"https://pokeapi.co/api/v2/pokemon/88/"},
+    
+    {"name":"muk","bio":"https://pokeapi.co/api/v2/pokemon/89/"},
+    
+    {"name":"shellder","bio":"https://pokeapi.co/api/v2/pokemon/90/"},
+    
+    {"name":"cloyster","bio":"https://pokeapi.co/api/v2/pokemon/91/"},
+    
+    {"name":"gastly","bio":"https://pokeapi.co/api/v2/pokemon/92/"},
+    
+    {"name":"haunter","bio":"https://pokeapi.co/api/v2/pokemon/93/"},
+    
+    {"name":"gengar","bio":"https://pokeapi.co/api/v2/pokemon/94/"},
+    
+    {"name":"onix","bio":"https://pokeapi.co/api/v2/pokemon/95/"},
+    
+    {"name":"drowzee","bio":"https://pokeapi.co/api/v2/pokemon/96/"},
+    
+    {"name":"hypno","bio":"https://pokeapi.co/api/v2/pokemon/97/"},
+    
+    {"name":"krabby","bio":"https://pokeapi.co/api/v2/pokemon/98/"},
+    
+    {"name":"kingler","bio":"https://pokeapi.co/api/v2/pokemon/99/"},
+    
+    {"name":"voltorb","bio":"https://pokeapi.co/api/v2/pokemon/100/"}
+]
