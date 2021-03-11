@@ -22,5 +22,7 @@
     .container {
         height: 22rem;
         width: 80rem;
+        grid-template-areas: "crd1 crd2 crd3 crd4 crd5 crd6 crd7 crd8 cr9 crd10 crd11";
+        gap: .5rem;
     }
 }
