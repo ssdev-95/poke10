@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useState, useEffect } from 'react';
 import { getPokemon, getPokemonData } from '../components/Pokemon';
+import entries from '../../pokebios.json';
 
 interface PokeData {
     id: string;
@@ -39,7 +40,7 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
             type1: 'fire',
             type2: 'flying'
         },
-        bio: 'A dragon like pokemon'
+        bio: 'The flame inside its body burns hotter than 3,600 degrees Fahrenheit. When Charizard roars, that temperature climbs even higher.'
     }
 
     const [poke, setPoke] = useState(pokemon)
@@ -61,6 +62,10 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
     useEffect( () => {
         getPokemonData(pokeDataUrl).then(res => {
             const { id, name, types, sprites } = res
+            let bio
+            entries.map(entrie=>{
+                (name === entrie.name) && (bio = entrie.bio)
+            })
             setPoke({
                 id: id,
                 name: name,
@@ -69,7 +74,7 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
                     type1: types[0].type.name,
                     type2: types[1]?.type.name
                 },
-                bio: 'Another pokemon'
+                bio: bio
             })
         }).catch(err=>{console.log(err)})
     }, [pokeDataUrl])
