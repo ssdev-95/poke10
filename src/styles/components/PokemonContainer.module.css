@@ -16,6 +16,7 @@
     justify-content: space-evenly;
     
     margin: 2rem auto;
+    padding: .5rem 0;
 }
 
 @media(min-width: 801px) {
