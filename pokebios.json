@@ -48,41 +48,41 @@
     
     {"name":"raticate","bio":"It makes its Rattata underlings gather food for it, dining solely on the most nutritious and delicious fare."},
     
-    {"name":"spearow","bio":"Another pokemon"},
+    {"name":"spearow","bio":"Inept at flying high. However, it can fly around very fast to protect its territory."},
     
-    {"name":"fearow","bio":"Another pokemon"},
+    {"name":"fearow","bio":"A Pokémon that dates back many years. If it senses danger, it flies high and away, instantly."},
     
-    {"name":"ekans","bio":"Another pokemon"},
+    {"name":"ekans","bio":"The older it gets, the longer it grows. At night, it wraps its long body around tree branches to rest."},
     
-    {"name":"arbok","bio":"Another pokemon"},
+    {"name":"arbok","bio":"The frightening patterns on its belly have been studied. Six variations have been confirmed."},
     
-    {"name":"pikachu","bio":"Another pokemon"},
+    {"name":"pikachu","bio":"When it smashes its opponents with its bolt-shaped tail, it delivers a surge of electricity equivalent to a lightning strike."},
     
-    {"name":"raichu","bio":"Another pokemon"},
+    {"name":"raichu","bio":"This Pokémon rides on its tail while it uses its psychic powers to levitate. It attacks with star-shaped thunderbolts."},
     
-    {"name":"sandshrew","bio":"Another pokemon"},
+    {"name":"sandshrew","bio":"It lives in snowy mountains on southern islands. When a blizzard rolls in, this Pokémon hunkers down in the snow to avoid getting blown away."},
     
-    {"name":"sandslash","bio":"Another pokemon"},
+    {"name":"sandslash","bio":"Many people climb snowy mountains, hoping to see the icy spikes of these Pokémon glistening in the light of dawn."},
     
-    {"name":"nidoran-f","bio":"Another pokemon"},
+    {"name":"nidoran-f","bio":"It uses its hard incisor teeth to crush and eat berries. The tip of a female Nidoran's horn is a bit more rounded than the tip of a male's horn."},
     
-    {"name":"nidorina","bio":"Another pokemon"},
+    {"name":"nidorina","bio":"If the group is threatened, these Pokémon will band together to assault enemies with a chorus of ultrasonic waves."},
     
-    {"name":"nidoqueen","bio":"Another pokemon"},
+    {"name":"nidoqueen","bio":"It pacifies offspring by placing them in the gaps between the spines on its back. The spines will never secrete poison while young are present."},
     
-    {"name":"nidoran-m","bio":"Another pokemon"},
+    {"name":"nidoran-m","bio":"Small but brave, this Pokémon will hold its ground and even risk its life in battle to protect the female it's friendly with."},
     
-    {"name":"nidorino","bio":"Another pokemon"},
+    {"name":"nidorino","bio":"It's nervous and quick to act aggressively. The potency of its poison increases along with the level of adrenaline present in its body."},
     
-    {"name":"nidoking","bio":"Another pokemon"},
+    {"name":"nidoking","bio":"Nidoking prides itself on its strength. It's forceful and spirited in battle, making use of its thick tail and diamond-crushing horn."},
     
-    {"name":"clefairy","bio":"Another pokemon"},
+    {"name":"clefairy","bio":"Its adorable behavior and cry make it highly popular. However, this cute Pokémon is rarely found."},
     
-    {"name":"clefable","bio":"Another pokemon"},
+    {"name":"clefable","bio":"Their ears are sensitive enough to hear a pin drop from over a mile away, so they're usually found in quiet places."},
     
-    {"name":"vulpix","bio":"Another pokemon"},
+    {"name":"vulpix","bio":"If you observe its curly hairs through a microscope, you'll see small ice particles springing up."},
     
-    {"name":"ninetales","bio":"Another pokemon"},
+    {"name":"ninetales","bio":"While it will guide travelers who get lost on a snowy mountain down to the mountain's base, it won't forgive anyone who harms nature."},
     
     {"name":"jigglypuff","bio":"Another pokemon"},
     
@@ -206,5 +206,5 @@
     
     {"name":"kingler","bio":"Another pokemon"},
     
-    {"name":"voltorb","bio":"Another pokemon"}
+    {"name":"voltorb","bio":"It is said to camouflage itself as a Poké Ball. It will self-destruct with very little stimulus."}
 ]
