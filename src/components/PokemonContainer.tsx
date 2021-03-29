@@ -31,7 +31,6 @@ export default function PokemonContainer() {
         })}catch(err) {
             console.log(err)
         }
-        console.log(dex.length)
 
     }, [dex])
 

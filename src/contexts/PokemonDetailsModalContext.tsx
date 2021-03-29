@@ -1,6 +1,5 @@
 import { ReactNode, createContext, useState, useEffect } from 'react';
-import { getPokemon, getPokemonData } from '../components/Pokemon';
-import entries from '../../pokebios.json';
+import { getPokemon, getPokemonData, getFlavorText} from '../components/Pokemon';
 
 interface PokeData {
     id: string;
@@ -62,10 +61,8 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
     useEffect( () => {
         getPokemonData(pokeDataUrl).then(res => {
             const { id, name, types, sprites } = res
-            let bio
-            entries.map(entrie=>{
-                (name === entrie.name) && (bio = entrie.bio)
-            })
+            let mon_bio: string
+            getFlavorText(Number(id)).then(res=>mon_bio=String(res))
             setPoke({
                 id: id,
                 name: name,
@@ -74,7 +71,7 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
                     type1: types[0].type.name,
                     type2: types[1]?.type.name
                 },
-                bio: bio
+                bio: mon_bio
             })
         }).catch(err=>{console.log(err)})
     }, [pokeDataUrl])

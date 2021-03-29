@@ -46,6 +46,17 @@ export const getPokemons = async () => {
     return result
 }
 
+export const getFlavorText = async (_id: number) => {
+    const flavorUrl = `https://pokeapi.co/api/v2/pokedex/1/`
+    const response = await fetch(flavorUrl)
+    const data = await response.json()
+    const mon_data = await (await fetch(data.pokemon_entries[(_id-1)].pokemon_species.url)).json()
+    const text = mon_data.flavor_text_entries
+    let enTexts = []
+    text.map(tex=>tex.language.name=='en'&&enTexts.push(tex.flavor_text))
+    return enTexts[enTexts.length-1]
+}
+
 export const getPokemonData = async (url: string) => {
     const response = await fetch(url)
     const data = await response.json()
