@@ -30,6 +30,7 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
     const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false)
     const [ pokeDataUrl, setPokeDataUrl ] = useState('')
     const [newQuery, setNewQuery] = useState('')
+    const [pokeio, setPokeio] = useState('The flame inside its body burns hotter than 3,600 degrees Fahrenheit. When Charizard roars, that temperature climbs even higher.')
 
     const pokemon = {
         id: '6',
@@ -39,7 +40,7 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
             type1: 'fire',
             type2: 'flying'
         },
-        bio: 'The flame inside its body burns hotter than 3,600 degrees Fahrenheit. When Charizard roars, that temperature climbs even higher.'
+        bio: pokeio
     }
 
     const [poke, setPoke] = useState(pokemon)
@@ -61,8 +62,7 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
     useEffect( () => {
         getPokemonData(pokeDataUrl).then(res => {
             const { id, name, types, sprites } = res
-            let mon_bio: string
-            getFlavorText(Number(id)).then(res=>mon_bio=String(res))
+            getFlavorText(Number(id)).then(ponse=>setPokeio(ponse))
             setPoke({
                 id: id,
                 name: name,
@@ -71,7 +71,7 @@ export const PokemonDetailsContextProvider = ({children}: ProviderProps) => {
                     type1: types[0].type.name,
                     type2: types[1]?.type.name
                 },
-                bio: mon_bio
+                bio: pokeio
             })
         }).catch(err=>{console.log(err)})
     }, [pokeDataUrl])
