@@ -8,7 +8,7 @@
 
 - NextJS
 - CSS 3
-- PokeAPIE
+- PokeAPI
 
 ## Softwares used
 
