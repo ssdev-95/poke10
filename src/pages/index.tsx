@@ -1,29 +1,42 @@
 import React, { useEffect } from 'react';
 import { GetStaticProps } from 'next'
 
-import { getPokemonData } from './api/Pokemon'
+import { getPokemonData, getPokemons } from './api/Pokemon'
+
+import cookie from 'cookie'
 
 export default function Home({ pokedex }) {
-  useEffect(()=>{
-    console.log(pokedex)
-  }, [])
 
   return (
-    <div></div>
+    <div>
+      {
+        pokedex.map(pke=>(<div key={pke.id}>
+          <span>{pke.id}</span>
+          <span>{pke.name}</span>
+          <span>{pke.types}</span>
+        </div>)
+      )}
+    </div>
   )
 }
 
 export const getStaticProps:GetStaticProps = async () => {
-  let pokedex = []
+  const basedex = await getPokemons(0, 151)
+  const dexurls = basedex.results.map(dex=>dex.url)
 
-  for(let index=0; index<151; index++) {
-    const pokeurl = `https://pokeapi.co/api/v2/pokemon/${index+1}`
-    pokedex = [...pokedex, await getPokemonData(pokeurl)]
+  let pokelist = []
+
+  for(let id=0; id<10; id++) {
+    const url = dexurls[id]
+    const pokemon = await getPokemonData(url)
+    pokelist = [...pokelist, pokemon]
   }
+
+  console.log(pokelist)
 
   return {
     props: {
-      pokedex
+      pokedex: pokelist
     },
     revalidate: 60*60*24
   }
