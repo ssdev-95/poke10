@@ -36,8 +36,10 @@ export const TypeColors = [
     {"name":"water", "color":"#6890F0"}
 ]
 
-export const getPokemons = async () => {
-    const pokeUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=100'
+export const getPokemons = async (offset:number, limit:number) => {
+    const pokeUrl = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`
+
+    console.log(pokeUrl)
     
     const response = await fetch(pokeUrl)
     const data = await response.json()
@@ -52,8 +54,7 @@ export const getFlavorText = async (_id: number) => {
     const data = await response.json()
     const mon_data = await (await fetch(data.pokemon_entries[(_id-1)].pokemon_species.url)).json()
     const text = mon_data.flavor_text_entries
-    let enTexts = []
-    text.map(tex=>tex.language.name=='en'&&enTexts.push(tex.flavor_text))
+    let enTexts = text.map(tex=>tex.language.name=='en'&&tex.flavor_text)
     return enTexts[enTexts.length-1]
 }
 

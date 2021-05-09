@@ -1,17 +1,30 @@
-import React from 'react';
-import PokemonContainer from '../components/PokemonContainer';
-import PokemonDetailsModal from '../components/PokemonDetailsModal';
-import Searchbar from '../components/Searchbar';
-import styles from '../styles/pages/Home.module.css';
+import React, { useEffect } from 'react';
+import { GetStaticProps } from 'next'
 
-export default function Home() {
+import { getPokemonData } from './api/Pokemon'
+
+export default function Home({ pokedex }) {
+  useEffect(()=>{
+    console.log(pokedex)
+  }, [])
+
   return (
-    
-    <div className={styles.container}>
-      <PokemonDetailsModal />
-      <h1 className={styles.logo}>poke10</h1>
-      <Searchbar />
-      <PokemonContainer />
-    </div>
+    <div></div>
   )
+}
+
+export const getStaticProps:GetStaticProps = async () => {
+  let pokedex = []
+
+  for(let index=0; index<151; index++) {
+    const pokeurl = `https://pokeapi.co/api/v2/pokemon/${index+1}`
+    pokedex = [...pokedex, await getPokemonData(pokeurl)]
+  }
+
+  return {
+    props: {
+      pokedex
+    },
+    revalidate: 60*60*24
+  }
 }

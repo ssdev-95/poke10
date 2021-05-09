@@ -1,15 +1,8 @@
-import { PokemonDetailsContextProvider } from '../contexts/PokemonDetailsModalContext';
-import { SearchbarContextProvider } from '../contexts/SearchbarContext';
-
-import '../styles/globals.css'
+import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
   return(
-      <PokemonDetailsContextProvider>
-        <SearchbarContextProvider>
-        <Component {...pageProps} />
-        </SearchbarContextProvider>
-      </ PokemonDetailsContextProvider>
+    <Component {...pageProps} />
   )
 }
 
