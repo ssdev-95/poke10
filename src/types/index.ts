@@ -29,3 +29,7 @@ export interface PokemonProviderProps {
 export interface HomeProps {
     pokedex: PokemonData[];
 }
+
+export interface CardProps {
+  pokemon: PokemonData;
+}

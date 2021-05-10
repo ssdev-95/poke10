@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.pokedex {
+    width: 90vw;
+    height: 60vh;
+
+    max-width: 90%;
+    max-height: 75%;
+
+    padding: .5rem;
+    overflow-y: scroll;
+
+    
+    border-width: 0;
+    border-radius: 12px;
+    
+    background: #f0f2f5;
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: space-evenly;
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0,0,0,0);
+    }
+    &::-webkit-scrollbar-track {
+        width: rgba(0,0,0,0);
+    }
+}

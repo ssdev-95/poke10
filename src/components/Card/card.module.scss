@@ -1,1 +1,49 @@
 @charset "UTF-8";
+
+.card {
+    width: 8rem;
+    height: 8rem;
+
+    border: 1px solid rgba(0, 0, 0, .28);
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    header {
+        width: 100%;
+        padding: 0 .5rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+
+        position: absolute;
+        top:0;
+        left: 0;
+
+        span {
+            color: rgba(0, 0, 0, .48);
+        }
+    }
+
+    img {
+        margin-top: 0.5rem;  
+    }
+
+    div {
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        gap: .5rem;
+
+        span {
+            color: rgba(0, 0, 0, .48);
+        }
+    }
+}
