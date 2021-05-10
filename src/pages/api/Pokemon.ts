@@ -55,18 +55,17 @@ export const getPokemonData = async (url: string) => {
     return ponse
 }
 
-export const getFlavorText = async (_id: number) => {
-    const flavorUrl = `https://pokeapi.co/api/v2/pokedex/1/`
-    const response = await fetch(flavorUrl)
-    const data = await response.json()
-    const mon_data = await (await fetch(data.pokemon_entries[(_id-1)].pokemon_species.url)).json()
-    const text = mon_data.flavor_text_entries
-    let enTexts = text.map(tex=>tex.language.name=='en'&&tex.flavor_text)
-    return enTexts[enTexts.length-1]
+export const getFlavorText = async (id: number) => {
+    const flavorUrl = `https://pokeapi.co/api/v2/pokemon-species/${id}/`
+    const entries = await axios.get(flavorUrl)
+    const entry_data = await entries.data
+    const entry_texts = entry_data.flavor_text_entries.filter(entrie=>entrie.language.name==='en')
+    const flavor_text = entry_texts[entry_texts.length-1].flavor_text
+    return flavor_text
 }
 
-export const getPokemon = async () => {
-    const pokeUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=1118'
+export const getPokemonByName = async (name:string) => {
+    const pokeUrl = `https://pokeapi.co/api/v2/pokemon/${name}/`
     
     const res = await axios.get(pokeUrl)
     const ponse = await res.data

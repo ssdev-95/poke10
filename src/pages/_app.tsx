@@ -1,8 +1,12 @@
 import '../styles/globals.scss'
 
+import { PokemonProvider } from '@/contexts/Pokemon'
+ 
 function MyApp({ Component, pageProps }) {
   return(
-    <Component {...pageProps} />
+    <PokemonProvider>
+      <Component {...pageProps} />
+    </PokemonProvider>
   )
 }
 
