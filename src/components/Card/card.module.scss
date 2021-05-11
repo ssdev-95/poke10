@@ -46,4 +46,12 @@
             color: rgba(0, 0, 0, .48);
         }
     }
+
+    &:hover {
+        background: rgba(0, 0, 0, .48);
+
+        span {
+            color: rgba(255, 255, 255, .68);
+        }
+    }
 }

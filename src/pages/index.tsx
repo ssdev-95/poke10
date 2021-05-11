@@ -6,7 +6,7 @@ import Dashboard from '@/components/Dashboard'
 
 import { HomeProps } from '@/types'
 import { usePokemon } from '@/contexts/Pokemon'
-import { getPokemonData, getPokemons, getFlavorText } from '@/pages/api/Pokemon'
+import { getPokemonData, getPokemons, getFlavorText } from '@/pages/_api/Pokemon'
 
 import styles from '@/styles/home.module.scss'
 

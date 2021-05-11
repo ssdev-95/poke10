@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
-import { getFlavorText, getPokemonByName, getPokemons, TypeColors } from '@/pages/api/Pokemon'
+import { getFlavorText, getPokemonByName, TypeColors } from '@/pages/_api/Pokemon'
 import { PokemonDetailsProps } from '@/types'
 
 import styles from '@/styles/pokemon.module.scss'
@@ -32,7 +32,7 @@ export default function PokemonDetails({ pokemon }:PokemonDetailsProps) {
                 />
                 <div className={styles.types}>
                     {
-                        pokemon.types.map(type=>(<span>{type}</span>))
+                        pokemon.types.map(type=>(<span key={type}>{type}</span>))
                     }
                 </div>
             </div>
