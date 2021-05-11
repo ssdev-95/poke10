@@ -27,10 +27,6 @@ export const PokemonProvider = ({ children }: PokemonProviderProps) => {
         setPokemons(pokes)
     }
 
-    useEffect(()=>{
-      console.log(pokemons[6])
-    }, [pokemons])
-
     return (
         <Pokemon.Provider value={{
             returnPokemons,

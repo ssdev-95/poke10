@@ -34,3 +34,7 @@ export interface CardProps {
   pokemon: PokemonData;
   id: number;
 }
+
+export interface PokemonDetailsProps {
+  pokemon: PokemonData;
+}

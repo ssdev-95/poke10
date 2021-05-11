@@ -1,10 +1,16 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/router'
 
 import styles from './searchbar.module.scss'
 
 export default function Searchbar() {
     const { register, handleSubmit } = useForm()
+    const router = useRouter()
+
+    const submit = (data:any) => {
+        router.push(`/pokemon/${data.pokename}`)
+    }
 
     return (
         <div className={styles.searchbar}>
@@ -16,7 +22,7 @@ export default function Searchbar() {
             />
             <button
                className={styles.button}
-               onClick={()=>console.log('clicked!')}
+               onClick={handleSubmit(submit)}
             >
                 <img src="/pokeball.png" alt="Pokeball icon" />
                 <span>GO</span>

@@ -4,6 +4,22 @@
     width: 100%;
     height: 100;
     display: flex;
+    position: relative;
+
+    .homebutton {
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+        background: rgba(0,0,0,0);
+        border-width: 0;
+
+        padding: .2rem;
+        cursor:pointer;
+        
+        &:hover {
+            border-bottom: 1px solid rgba(255, 255, 255, .68);
+        }
+    }
     
     @media (max-width: 800px) {
         flex-direction: column;
@@ -23,20 +39,47 @@
 .sprite {
     height: 100vh;
     width: 30vw;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
+
     border-left: 1px solid #f0f2f5;
     position: relative;
     
-    img::first-child {
+    .spriteimg {
         position: relative;
+        height: 250px;
+        width: 250px; 
     }
 
-    img::last-child {
+    .shinyicon {
         position: absolute;
         top: 1rem;
-        left: 1rem;
+        right: 1rem;
+
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+    }
+
+    .types {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1.75rem;
+        
+        height: fit-content;
+        padding: .25rem 0
+
+        span {
+            padding: .2rem .5rem;
+            height: 1rem;
+            width: 3rem;
+            color: rgba(0,0,0,1);
+        }
     }
 
     @media (max-width: 800px) {
