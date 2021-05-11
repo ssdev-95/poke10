@@ -10,7 +10,7 @@ export default function Pokedex() {
     return (
         <section className={styles.pokedex}>
             {
-                pokemons.map(pokemon=><Card pokemon={pokemon} />)
+                pokemons.map(pokemon=><Card id={pokemon.id} pokemon={pokemon} />)
             }
         </section>
     )

@@ -32,4 +32,5 @@ export interface HomeProps {
 
 export interface CardProps {
   pokemon: PokemonData;
+  id: number;
 }
