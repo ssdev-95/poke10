@@ -8,7 +8,7 @@ export default function Card({ pokemon }: CardProps) {
     const router = useRouter()
 
     const goToPokemonDetail = () => {
-        router.push(`/${pokemon.name}`)
+        router.push(`/pokemon/${pokemon.name}`)
     }
 
     return (

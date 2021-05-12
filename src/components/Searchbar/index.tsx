@@ -9,7 +9,7 @@ export default function Searchbar() {
     const router = useRouter()
 
     const submit = (data:any) => {
-        router.push(`/${data.pokename}`)
+        router.push(`/pokemon/${data.pokename}`)
     }
 
     return (
