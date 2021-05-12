@@ -11,10 +11,10 @@ export const PokemonProvider = ({ children }: PokemonProviderProps) => {
     types: [''],
     height: 0,
     weight: 0,
-    stats: {
+    stats: [{
       stat: '',
       baseStat: 0,
-    },
+    }],
     sprites: {
       normal: '',
       shiny: '',
