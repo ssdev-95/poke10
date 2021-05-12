@@ -72,3 +72,12 @@ export const getPokemonByName = async (name:string) => {
 
     return ponse
 }
+
+export const getPokemonNames = async () => {
+    const url = 'https://pokeapi.com/api/v2/pokemon/?offset=0&limit=15'
+    const res = await axios.get(url)
+    const ponse = await res.data
+    const names = ponse.map(item=>item.name)
+    
+    return names
+}

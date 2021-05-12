@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, FC } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { getFlavorText, getPokemonByName, TypeColors } from '@/pages/_api/Pokemon'
+import { getPokemonNames, getFlavorText, getPokemonByName, TypeColors } from '@/api/Pokemon'
 import { PokemonDetailsProps } from '@/types'
 
 import styles from '@/styles/pokemon.module.scss'
 
-export default function PokemonDetails({ pokemon }:PokemonDetailsProps) {
+const PokemonDetails = ({ pokemon }:PokemonDetailsProps) => {
     const [shinySelected, setShinySelected] = useState(false)
     const pokemonSprite = shinySelected?pokemon.sprites.shiny:pokemon.sprites.normal
     const filterValues = shinySelected?'100%':'0%'
@@ -64,7 +64,10 @@ export default function PokemonDetails({ pokemon }:PokemonDetailsProps) {
 }
 
 export const getStaticPaths:GetStaticPaths = async () => {
+    const pokenames = await getPokemonNames()
     const name = ''
+
+    console.log(pokenames)
 
     return {
         paths: [{
@@ -113,3 +116,5 @@ export const getStaticProps:GetStaticProps = async (ctx) => {
         revalidate: 60*60*24
     }
 }
+
+export default PokemonDetails

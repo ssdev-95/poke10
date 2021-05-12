@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, FC } from 'react'
 import { useRouter } from 'next/router'
 
 import styles from '@/styles/pokedexpage.module.scss'
 
-export default function Pokedex() {
+const Pokedex:FC = () => {
     const router = useRouter()
     
     useEffect(()=>{
@@ -17,3 +17,5 @@ export default function Pokedex() {
         </div>
     )
 }
+
+export default Pokedex
