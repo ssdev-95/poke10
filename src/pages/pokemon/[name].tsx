@@ -10,6 +10,7 @@ export default function PokemonDetails({ pokemon }:PokemonDetailsProps) {
     const [shinySelected, setShinySelected] = useState(false)
     const router = useRouter()
     const pokemonSprite = shinySelected?pokemon.sprites.shiny:pokemon.sprites.normal
+    const filterValues = shinySelected?['100%','70%','16deg']:[0,0,0]
 
     const toggleShinySelection = () => {
         setShinySelected(!shinySelected)
@@ -29,6 +30,7 @@ export default function PokemonDetails({ pokemon }:PokemonDetailsProps) {
                     src="/shiny.svg"
                     alt="Shiny Icon"
                     onClick={toggleShinySelection}
+                    style={{filter: `invert(${filterValues[0]}) sepia(${filterValues[1]}) hue-rotate(${filterValues[2]})`}}
                 />
                 <div className={styles.types}>
                     {
