@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { useRouter } from 'next/router'
 import { getFlavorText, getPokemonByName, TypeColors } from '@/pages/_api/Pokemon'
 import { PokemonDetailsProps } from '@/types'
 
@@ -8,19 +7,12 @@ import styles from '@/styles/pokemon.module.scss'
 
 export default function PokemonDetails({ pokemon }:PokemonDetailsProps) {
     const [shinySelected, setShinySelected] = useState(false)
-    const router = useRouter()
     const pokemonSprite = shinySelected?pokemon.sprites.shiny:pokemon.sprites.normal
     const filterValues = shinySelected?['100%','70%','16deg']:[0,0,0]
 
     const toggleShinySelection = () => {
         setShinySelected(!shinySelected)
     }
-
-    const goHome = () => {
-        router.push('/')
-    }
-
-    const formatPokename = (name:string) => {}
 
     return (
         <div className={styles.pokemoncontainer}>
@@ -57,16 +49,16 @@ export default function PokemonDetails({ pokemon }:PokemonDetailsProps) {
                 />
                 <div className={styles.types}>
                     {
-                        pokemon.types.map(type=>(<span key={type}>{type}</span>))
+                        pokemon.types.map(type=>(<span
+                            key={type}
+                            style={{ background: TypeColors.filter(tp=>{
+                                if(tp.name===type) return tp
+                            })[0].color}}
+                        >{type}</span>))
                     }
                 </div>
             </div>
-            <div
-              className={styles.homebutton}
-              onClick={goHome}
-            >
-                <span>&lt;&lt;&nbsp;home</span>
-            </div>
+            <a href="/">&lt;&lt;&nbsp;home</a>
         </div>
     )
 }
