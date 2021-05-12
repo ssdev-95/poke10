@@ -20,9 +20,32 @@ export default function PokemonDetails({ pokemon }:PokemonDetailsProps) {
         router.push('/')
     }
 
+    const formatPokename = (name:string) => {}
+
     return (
         <div className={styles.pokemoncontainer}>
-            <div className={styles.details}></div>
+            <div className={styles.details}>
+                <h1>{pokemon.name}</h1>
+                <div className={styles.pokestats}>
+                    <div className={styles.stat}>
+                        <span>weight</span>
+                        <span>{pokemon.weight}</span>
+                    </div>
+                    {
+                        pokemon.stats.map(stat=>(
+                            <div
+                              key={stat.stat}
+                              className={styles.stat}>
+                                <span>{stat.stat==='special-attack'?'spAtack':(
+                                    stat.stat==='special-defense'?'spDefense':stat.stat
+                                )}</span>
+                                <span>{stat.baseStat}</span>
+                            </div>
+                        ))
+                   }
+                </div>
+                <p>{pokemon.dex_entry}</p>
+            </div>
             <div className={styles.sprite}>
                 <img className={styles.spriteimg} src={!pokemon?'/pokeball.png':pokemonSprite} alt={`${pokemon.name} Sprite`} />
                 <img

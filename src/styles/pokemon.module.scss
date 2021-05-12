@@ -29,6 +29,36 @@
 .details {
     width: 70vw;
     height: 100vh;
+    padding: 5rem 2.5rem;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    .pokestats {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .stat {
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            text-transform: capitalize;
+        }
+    }
 
     @media (max-width: 800px) {
         height: 70vh;
