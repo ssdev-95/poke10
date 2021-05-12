@@ -9,7 +9,7 @@ export interface PokemonData {
     stats: {
       stat: string;
       baseStat: number;
-    };
+    }[];
     sprites: {
       normal: string;
       shiny: string;
