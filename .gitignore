@@ -8,10 +8,6 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
 # production
 /build
 
@@ -32,8 +28,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-#folders
-public/prototyping/
-*.js
-*.csv
