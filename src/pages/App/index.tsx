@@ -1,3 +1,4 @@
+// import { useEffect } from 'react';
 import { PokedexContainer } from 'src/components/PokedexContainer';
 import { SearchBar } from 'src/components/SearchBar';
 
@@ -6,6 +7,9 @@ import LogoIcon from 'src/icons/logo.svg';
 
 function App() {
   const { App } = useStyles();
+
+  // useEffect(()=> console.log(dex),[dex])
+
   return (
     <main className={App}>
       <header>
