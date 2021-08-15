@@ -9,12 +9,12 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <PokemonProvider>
+    <PokemonProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
         <App />
-      </PokemonProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </PokemonProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
