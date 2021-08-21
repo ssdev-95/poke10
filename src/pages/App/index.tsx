@@ -1,26 +1,18 @@
-// import { useEffect } from 'react';
-import { PokedexContainer } from 'src/components/PokedexContainer';
-import { SearchBar } from 'src/components/SearchBar';
-
-import { useStyles } from 'src/styles/app.styles';
-import LogoIcon from 'src/icons/logo.svg';
+import { useHistory } from 'react-router-dom';
+import Pokeball from 'src/icons/pokeball.png';
+import { useStyles } from 'src/styles/home.styles';
 
 function App() {
-  const { App } = useStyles();
+    const router = useHistory();
+    const { Home } = useStyles();
 
-  // useEffect(()=> console.log(dex),[dex])
-
-  return (
-    <main className={App}>
-      <header>
-        <img src={LogoIcon} alt="Poke10" />
-      </header>
-      <div>
-        <SearchBar />
-        <PokedexContainer />
-      </div>
-    </main>
-  );
+    return (
+        <main className={Home}>
+            <button onClick={()=>router.push('/dex')}>
+                <img src={Pokeball} alt="Pokeball"/>
+            </button>
+        </main>
+    );
 }
 
 export default App;

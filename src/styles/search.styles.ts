@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme)=>({
         height: '3rem',
         display: 'flex',
         gap: 0,
+        margin: '0 auto',
 
         '&>input': {
             height: '3rem',
