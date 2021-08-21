@@ -1,12 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { IProvider, IPokemonData, IPokemon } from 'src/@types';
 import axios from 'axios';
 
 const PokemonContext = createContext({} as IPokemonData);
 
 const PokemonProvider = ({ children }: IProvider) => {
-    // eslint-disable-next-line
     const [dex, setDex] = useState<IPokemon[]>([]);
 
     const getPokemons = async (offset:number, limit:number) => {
@@ -62,15 +61,10 @@ const PokemonProvider = ({ children }: IProvider) => {
         return flavor;
     }
 
-    useEffect(()=>{
-        if(dex.length===0) {
-            getPokemons(0, 15)
-        }
-    }, [])
-
     return (
         <PokemonContext.Provider value={{
             dex,
+            getPokemons,
             getPokemonData
         }}>
             {children}
@@ -78,8 +72,8 @@ const PokemonProvider = ({ children }: IProvider) => {
     )
 }
 
-const usePokemon = () => {
+const usePokedex = () => {
     return useContext(PokemonContext);
 }
 
-export { PokemonProvider, usePokemon };
+export { PokemonProvider, usePokedex };

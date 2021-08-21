@@ -6,6 +6,7 @@ interface IProvider {
 
 interface IPokemonData {
     dex: IPokemon[];
+    getPokemons: (offset: number, limit: number) => Promise<void>;
     getPokemonData: (name: string)=>Promise<IPokemon>;
 }
 
