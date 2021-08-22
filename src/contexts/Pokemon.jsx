@@ -6,22 +6,32 @@ const PokemonContext = createContext({});
 
 const PokemonProvider = ({ children }) => {
     const [dex, setDex] = useState([]);
+    const [selectedPoke, setSelectedPoke] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const toggleSelectedPokemon = (pokename) => {
+        setSelectedPoke(pokename);
+    }
+
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    }
 
     const getPokemons = (offset, limit) => {
         const uri = `${process.env.REACT_APP_API}/?offset=${offset}&limit=${limit}`;
-        // let dex: IPokemon[] = [];
+        let pokes = [];
         
         axios.get(uri).then(({data})=>{
             data['results'].forEach(({name})=>{
                 getPokemonData(name).then(res=>{
-                    // dex.push(res);
+                    pokes.push(res);
 
-                    setDex([...dex, res]);
+                    // setDex([...dex, res]);
                 })
             });
         });
         
-        // setDex(dex);
+        setDex(pokes);
     }
     
     const getPokemonData = async (name) => {
@@ -66,7 +76,13 @@ const PokemonProvider = ({ children }) => {
         <PokemonContext.Provider value={{
             dex,
             getPokemons,
-            getPokemonData
+            getPokemonData,
+
+            selectedPoke,
+            toggleSelectedPokemon,
+
+            isModalOpen,
+            toggleModal
         }}>
             {children}
         </PokemonContext.Provider>
