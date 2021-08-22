@@ -1,7 +1,6 @@
-import { ICard } from 'src/@types';
 import { useStyles } from 'src/styles/pokecard.styles';
 
-const PokemonCard = ({pokemon}: ICard) => {
+const PokemonCard = ({pokemon}) => {
     const { Card } = useStyles();
 
     return (

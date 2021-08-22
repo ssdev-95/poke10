@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState } from 'react';
 import Pokeball from 'src/icons/pokeball.png';
 import { useStyles } from 'src/styles/search.styles';
 
@@ -6,13 +6,13 @@ const SearchBar =() => {
   const { Label } = useStyles();
   const [pokename, setPokename] = useState('');
 
-  const handleKeyUp = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleKeyUp = (event) => {
     const value = event.currentTarget.value;
 
     setPokename((value.toLowerCase()).replace(' ', ''));
   }
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     
     if(pokename.trim()!=='') {

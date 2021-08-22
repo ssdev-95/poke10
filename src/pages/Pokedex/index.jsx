@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { usePokedex } from 'src/contexts/Pokemon';
 
 import { PokedexContainer } from 'src/components/PokedexContainer';
 import { SearchBar } from 'src/components/SearchBar';
+import { PokeSpinner } from 'src/components/PokeSpinner';
 
 import { useStyles } from 'src/styles/pokepage.styles';
 import LogoIcon from 'src/icons/logo.svg';
@@ -13,14 +14,19 @@ const limit = Number(process.env.REACT_APP_STD_QUERY_LIMIT);
 
 function Pokedex() {
   const { Dex } = useStyles();
-  const { getPokemons } = usePokedex();
+  const { getPokemons, dex } = usePokedex();
   const { search } = useLocation();
+  const [loading, setLoading] = useState(true);
 
   useEffect(()=>{
     const query = Number(search.replace('?limit=',''))|| limit;
     getPokemons(0, query);
-    // console.log(query);
-  }, [])
+  }, []);
+
+  useEffect(()=>{
+    console.log(dex);
+    dex && setTimeout(()=>setLoading(dex.length>0), 1000);
+  }, [dex]);
 
   return (
     <main className={Dex}>
@@ -29,7 +35,7 @@ function Pokedex() {
       </header>
       <div>
         <SearchBar />
-        <PokedexContainer />
+        { loading ? (<PokeSpinner />):(<PokedexContainer />) }
       </div>
     </main>
   );
