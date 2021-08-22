@@ -1,29 +1,30 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useContext, useState } from 'react';
-import { IProvider, IPokemonData, IPokemon } from 'src/@types';
 import axios from 'axios';
 
-const PokemonContext = createContext({} as IPokemonData);
+const PokemonContext = createContext({});
 
-const PokemonProvider = ({ children }: IProvider) => {
-    const [dex, setDex] = useState<IPokemon[]>([]);
+const PokemonProvider = ({ children }) => {
+    const [dex, setDex] = useState([]);
 
-    const getPokemons = async (offset:number, limit:number) => {
+    const getPokemons = (offset, limit) => {
         const uri = `${process.env.REACT_APP_API}/?offset=${offset}&limit=${limit}`;
-        const {data} = await axios.get(uri);
+        // let dex: IPokemon[] = [];
         
-        let dex: IPokemon[] = [];
-        data['results'].forEach(({name}:{name:string, url:string})=>{
+        axios.get(uri).then(({data})=>{
+            data['results'].forEach(({name})=>{
+                getPokemonData(name).then(res=>{
+                    // dex.push(res);
 
-            getPokemonData(name).then(res=>{
-                dex.push(res);
-            })
+                    setDex([...dex, res]);
+                })
+            });
         });
         
-        setDex(dex);
+        // setDex(dex);
     }
     
-    const getPokemonData = async (name: string) => {
+    const getPokemonData = async (name) => {
         const uri = `${process.env.REACT_APP_API}/${name}`
         const { data } = await axios.get(uri)
 
@@ -44,19 +45,19 @@ const PokemonProvider = ({ children }: IProvider) => {
                 normal: `${data.sprites['front_default']}`,
                 shiny: `${data.sprites['front_shiny']}`
             },
-            types: data['types'].map(({slot, type}:any)=>type.name) as string[],
+            types: data['types'].map(({slot, type})=>type.name),
             flavor_text: await getFlavorText(data['id'])
-        } as IPokemon;
+        };
 
         return pokemon;
     }
     
-    const getFlavorText = async (id: number) => {
+    const getFlavorText = async (id) => {
         const uri = `${process.env.REACT_APP_API}-species/${id}/`;
 
         const {data} = await axios.get(uri);
 
-        const flavor = data['flavor_text_entries'].filter((text:{flavor_text:string,language:{name:string,url:string}})=>(text.language.name==='en'))[0]['flavor_text'] as string;
+        const flavor = data['flavor_text_entries'].filter((text)=>(text.language.name==='en'))[0]['flavor_text'];
 
         return flavor;
     }
