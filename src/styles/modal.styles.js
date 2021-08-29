@@ -20,6 +20,8 @@ const useStyles = makeStyles(theme=>({
         top: 0,
         right: 0,
         backgroundColor: '#f0f2f5',
+        color: `${theme.palette.primary['main']}`,
+        fontWeight: 600,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -28,22 +30,51 @@ const useStyles = makeStyles(theme=>({
         padding: '1rem',
         animation: `$SlideIn 2s 1 ${theme.transitions.easing.easeInOut}`,
         transition: 'all 1s ease',
-        '& > button:first-of-type': {
-            alignSelf: 'flex-end',
-            height: '1rem',
+        '& > button': {
+            cursor: 'pointer',
+            height: '2rem',
             width: 'auto',
             border: 'none',
             backgroundColor: 'rgba(0,0,0,0)',
-            '&:active': {
-                backgroundColor: 'rgba(0,0,0,0.15)'
+            '& > img': {
+                width: '100%',
+                height: '100%'
             },
-            '&.shiny': {
-                filter: 'inverse(100%)'
+            '&:active': {
+                // backgroundColor: 'rgba(0,0,0,0.15)',
+                color: 'red'
             }
         },
-        '& > img': {
-            width: '50%',
-            height: 'auto'
+        '& > div': {
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'space-around',
+            '&:first-of-type': {
+                justifyContent: 'center',
+                '& > img': {
+                    background: 'red',
+                    width: '50%',
+                    height: 'auto'
+                }
+            },
+            '& > button': {
+                cursor: 'pointer',
+                height: '2rem',
+                width: 'auto',
+                border: 'none',
+                backgroundColor: 'rgba(0,0,0,0)',
+                '& > img': {
+                    width: '100%',
+                    height: '100%'
+                },
+                '&[name="shiny"]': {
+                    '&.shiny': {
+                        '& > img': {
+                            filter: 'invert(50%)'
+                        }
+                    }
+                }
+            }
         }
     }
 }));

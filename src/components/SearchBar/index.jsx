@@ -17,10 +17,6 @@ const SearchBar =() => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    // if(pokename.trim()!=='') {
-    //   console.log(pokename);
-    // }
 
     toggleSelectedPokemon(pokename);
 

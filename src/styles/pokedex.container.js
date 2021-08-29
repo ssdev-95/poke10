@@ -2,8 +2,8 @@ import { makeStyles } from  '@material-ui/core';
 
 const useStyles = makeStyles({
     Container: {
-        width: '60rem',
-        maxWidth: '80vw',
+        width: '65rem',
+        maxWidth: '90vw',
         maxHeight: '70vh',
         display: 'flex',
         justifyContent: 'center',

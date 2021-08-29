@@ -1,6 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Box } from '@material-ui/core';
 import { usePokedex } from 'src/contexts/Pokemon';
 
 import { PokedexContainer } from 'src/components/PokedexContainer';
@@ -9,8 +9,8 @@ import { PokeSpinner } from 'src/components/PokeSpinner';
 import { Modal } from 'src/components/PokeModal';
 
 import { useStyles } from 'src/styles/pokepage.styles';
-import LogoIcon from 'src/icons/logo.svg';
 
+const LogoIcon = require(`../../icons/${process.env?.REACT_APP_LOGO}.svg`);
 const limit = Number(process.env.REACT_APP_STD_QUERY_LIMIT);
 
 function Pokedex() {
@@ -30,15 +30,15 @@ function Pokedex() {
 
   return (<>
     { isModalOpen && (<Modal />) }
-    <main className={Dex}>
+    <Box className={Dex}>
       <header>
-        <img src={LogoIcon} alt="Poke10" />
+        <img src={LogoIcon['default']} alt="Poke10" />
       </header>
       <div>
         <SearchBar />
         { loading ? (<PokeSpinner />):(<PokedexContainer />) }
       </div>
-    </main>
+    </Box>
   </>);
 }
 
