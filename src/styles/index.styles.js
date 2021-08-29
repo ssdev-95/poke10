@@ -10,7 +10,8 @@ const theme = createTheme({
           boxSizing: 'border-box'
         },
         'body': {
-          fontFamily: 'sans-serif'
+          fontFamily: 'sans-serif',
+          overflow: 'hidden'
         }
       }
     }

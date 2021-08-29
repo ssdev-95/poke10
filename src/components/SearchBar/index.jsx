@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { usePokedex } from 'src/contexts/Pokemon';
 import Pokeball from 'src/icons/pokeball.png';
 import { useStyles } from 'src/styles/search.styles';
 
 const SearchBar =() => {
   const { Label } = useStyles();
   const [pokename, setPokename] = useState('');
+
+  const { toggleModal, toggleSelectedPokemon } = usePokedex();
 
   const handleKeyUp = (event) => {
     const value = event.currentTarget.value;
@@ -14,10 +17,10 @@ const SearchBar =() => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    if(pokename.trim()!=='') {
-      console.log(pokename);
-    }
+
+    toggleSelectedPokemon(pokename);
+
+    toggleModal();
 
     setPokename('');
   }

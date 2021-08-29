@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme=>({
         height: 'fit-content',
         width: 'fit-content',
         margin: '20vh auto',
+        background: 'rgba(0,0,0,0)',
+        border: 'none',
+        boxShadow: 'none',
         '& > img': {
             height: 'auto',
             width: '160px',

@@ -7,8 +7,7 @@ const useStyles = makeStyles((theme)=>({
     background: `${theme.palette.primary['main']}`,
     '&>div': {
       width: '100%',
-      height: '85vh',
-      padding: '1.5rem 4rem'
+      height: '85vh'
     },
     '&>header': {
       width: '100%',
