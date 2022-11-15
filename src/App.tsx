@@ -1,3 +1,6 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
 import {
   Route,
 	Routes,
@@ -8,19 +11,24 @@ import { Home } from './pages/home'
 import { Pokemon } from './pages/pokemon'
 
 export function App() {
-  return (
-	  <BrowserRouter>
-			<Routes>
-			  <Route
-				  path="/"
-					element={<Home />}
-				/>
+  const client = new QueryClient()
 
-				<Route
-				  path="/pokemon/:id"
-					element={<Pokemon />}
-				/>
-			</Routes>
-		</BrowserRouter>
+  return (
+	  <QueryClientProvider client={client}>
+		  <ReactQueryDevtools initialIsOpen={false} />
+    	<BrowserRouter>
+  	  	<Routes>
+	  		  <Route
+  				  path="/"
+  				  element={<Home />}
+  			  />
+
+  		  	<Route
+		  		  path="/pokemon/:id"
+	  				element={<Pokemon />}
+  				/>
+  			</Routes>
+  		</BrowserRouter>
+		</QueryClientProvider>
 	)
 }

@@ -1,10 +1,21 @@
+import { useQuery } from '@tanstack/react-query'
+
 import { Header } from '../components/header'
+import { Loader } from '../components/loader'
+import { PokemonCard } from '../components/pokemon_card'
 
 import ArrowDown from '../assets/arrow_down.svg'
 import Poke10Logo from '../assets/logo.svg'
-import {PokemonCard} from '../components/pokemon_card'
+
+import { fetchPokemonList } from '../services/fetch_pokemons'
 
 export function Home() {
+	const { isLoading, data } = useQuery({
+  	queryKey: ['pokemons'],
+	  queryFn: () => fetchPokemonList(),
+		staleTime: 20000
+	})
+
   return (
 	  <div className="min-h-screen w-screen max-w-[50rem] mx-auto px-4 py-6">
 		  <Header>
@@ -23,8 +34,13 @@ export function Home() {
 				/>
 			</label>
 
-			<div>
-			  <PokemonCard />
+			<div className="flex gap-1 flex-wrap min-h-full">
+			  {isLoading ? <Loader/> : data?.pokemons.map(pokemon => (
+				  <PokemonCard
+					  key={pokemon.id}
+						pokemon={pokemon}
+					/>
+				))}
 			</div>
 		</div>
 	)
