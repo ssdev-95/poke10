@@ -5,15 +5,21 @@ import { PokemonCardType } from '../components/pokemon_card'
 export async function fetchSinglePokemon(url:string):Promise<PokemonCardType> {
 	const res = await api.get<PokemonResponse>(url)
 	const { id, name, types, sprites } = res.data
+	console.log(res.data)
 
-	return { id, name, types: types.map(
-		type => type.type.name
-	), sprites: {
-		official_artwork: sprites.other.official_artwork.front_default,
-		home_default: sprites.other.home?.front_default,
-		home_shiny: sprites.other.home?.front_shiny,
-		dream_world: sprites.other.dream_world?.front_default
-	}}
+	return {
+		id,
+		name,
+		types: types.map(
+			type => type.type.name
+		),
+		sprites: {
+			official_artwork: sprites.other['official-artwork'].front_default,
+			home_default: sprites.other.home?.front_default,
+			home_shiny: sprites.other.home?.front_shiny,
+			dream_world: sprites.other.dream_world?.front_default
+		}
+	}
 }
 
 export async function fetchPokemonList() {
@@ -35,6 +41,6 @@ export async function fetchPokemonList() {
 		pokemons
 	}
 
-	console.log(result)
+	//console.log(result)
 	return result
 }

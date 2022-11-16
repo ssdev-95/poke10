@@ -15,17 +15,15 @@ module.exports = {
 				md: '12px',
 				lg: '14px',
 				xl: '24px'
-			}
-		},
-		colors: {
-			white: '#ffffff',
-			gray: {
-				'50': '#f7f7f7',
-				'200': '#e0e0e0',
-				'500': '#666666',
-				'800': '#212121'
 			},
-			poketype: {
+			colors: {
+				white: '#ffffff',
+				gray: {
+					'50': '#f7f7f7',
+					'200': '#e0e0e0',
+					'500': '#666666',
+					'800': '#212121'
+				},
 				rock: '#b69e31',
 				ghost: '#70559b',
 				steel: '#b7b9d0',

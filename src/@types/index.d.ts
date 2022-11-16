@@ -22,7 +22,7 @@ export interface PokemonResponse {
 			  front_default: string
 				front_shiny: string
 			}
-			official_artwork: {
+			'official-artwork': {
 			  front_default: string
 			}
 		}
