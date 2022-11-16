@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Poke10
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Poke10 Banner](https://raw.githubusercontent.com/xSallus/poke10/main/public/banner.png)
 
 ## Available Scripts
 
@@ -44,3 +44,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+Thanks to [Ricardo Schiniegoski](https://www.figma.com/@ricardohs) for the design on figma.. | [Layout Reference](https://www.figma.com/community/file/979132880663340794)
