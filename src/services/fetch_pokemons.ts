@@ -1,18 +1,24 @@
 import { api } from './api'
-import { PokemonResponse } from '../@types'
-import { PokemonCardType } from '../components/pokemon_card'
+import { PokemonResponse, PokemonType } from '../@types'
 
-export async function fetchSinglePokemon(url:string):Promise<PokemonCardType> {
+export async function fetchSinglePokemon(url:string):Promise<PokemonType> {
 	const res = await api.get<PokemonResponse>(url)
-	const { id, name, types, sprites } = res.data
-	console.log(res.data)
+
+	const {
+		id, name, height, types, sprites, stats
+	} = res.data
 
 	return {
 		id,
 		name,
+		height,
 		types: types.map(
 			type => type.type.name
 		),
+		stats: stats.map(({ stat, base_stat }) => ({
+			base_stat,
+			name: stat.name
+		})),
 		sprites: {
 			official_artwork: sprites.other['official-artwork'].front_default,
 			home_default: sprites.other.home?.front_default,
@@ -41,6 +47,5 @@ export async function fetchPokemonList() {
 		pokemons
 	}
 
-	//console.log(result)
 	return result
 }

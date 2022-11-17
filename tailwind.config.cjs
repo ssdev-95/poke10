@@ -4,6 +4,7 @@ module.exports = {
 		'./index.html',
 		'./src/**/*.tsx'
 	],
+	mode: 'jit',
   theme: {
     extend: {
 			fontFamily: {
@@ -24,24 +25,24 @@ module.exports = {
 					'500': '#666666',
 					'800': '#212121'
 				},
-				rock: '#b69e31',
-				ghost: '#70559b',
-				steel: '#b7b9d0',
-				water: '#6493eb',
-				grass: '#74cb48',
-				psychic: '#fb5584',
-				ice: '#9ad6df',
-				dark: '#75574c',
-				fairy: '#e69eac',
-				normal: '#aaa67f',
-				fighting: '#c12239',
-				flying: '#a891ec',
-				poison: '#a43e9e',
-				ground: '#dec17b',
-				bug: '#a7b723',
-				fire: '#f57d31',
-				electric: '#f9cf30',
-				dragon: '#7037ff'
+				'rock': '#b69e31',
+				'ghost': '#70559b',
+				'steel': '#b7b9d0',
+				'water': '#6493eb',
+				'grass': '#74cb48',
+				'psychic': '#fb5584',
+				'ice': '#9ad6df',
+				'dark': '#75574c',
+				'fairy': '#e69eac',
+				'normal': '#aaa67f',
+				'fighting': '#c12239',
+				'flying': '#a891ec',
+				'poison': '#a43e9e',
+				'ground': '#dec17b',
+				'bug': '#a7b723',
+				'fire': '#f57d31',
+				'electric': '#f9cf30',
+				'dragon': '#7037ff'
 			}
 		}
   },

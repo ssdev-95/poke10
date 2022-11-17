@@ -34,11 +34,11 @@ export function Home() {
 				/>
 			</label>
 
-			<div className="flex gap-1 flex-wrap min-h-full">
+			<div className="flex gap-4 flex-wrap min-h-full">
 			  {isLoading ? <Loader/> : data?.pokemons.map(pokemon => (
 				  <PokemonCard
 					  key={pokemon.id}
-						pokemon={pokemon}
+						{...pokemon}
 					/>
 				))}
 			</div>

@@ -30,17 +30,17 @@ export interface PokemonResponse {
 }
 
 export type PokemonType = Pick<PokemonResponse, 'id'|'name'|'height'> & {
+	types: string[]
+
 	sprites: {
-		dream_world: string
 		official_artwork: string
 		home_default: string
 		home_shiny: string
+		dream_world: string
 	}
 
 	stats: {
 		name: string
 		base_stat: number
 	}[]
-
-	types: string[]
 }
