@@ -1,3 +1,7 @@
+import { Link} from 'react-router-dom'
+
+import { classes } from '../styles/card-classes'
+
 type PokemonCardProps = {
   id: number
 	name: string
@@ -17,12 +21,13 @@ export function PokemonCard({
 	const headerClass = `text-${types[0]} font-semibold`
 
   return (
+	  <Link to={`/pokemon/${id}`}>
 	  <div
 		  role="card"
 			className={`w-[11rem] min-h-[12rem] overflow-hidden rounded-sm ${ringClass}`}
 		>
 		  <header className="p-2 text-right">
-			  <span className={headerClass}>
+			  <span className={classes.bug.txt}>
 				  # {id.toString().padStart(3, '0')}
 				</span>
 			</header>
@@ -41,5 +46,6 @@ export function PokemonCard({
 				</span>
 			</footer>
 		</div>
+		</Link>
 	)
 }

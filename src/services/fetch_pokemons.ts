@@ -1,5 +1,16 @@
 import { api } from './api'
-import { PokemonResponse, PokemonType } from '../@types'
+import { PokemonResponse, FlavorTextResponse, PokemonType } from '../@types'
+
+async function fetchPokemonFlavorText(id:number) {
+	const url = `/pokemon-species/${id}`
+	const { data } = await api.get<FlavorTextResponse>(url)
+
+	return (data.flavor_text_entries.find(
+		entry => entry.language.name === 'en'
+	)?.flavor_text ?? '')
+	  .replaceAll('\n', ' ')
+		.replaceAll('\f', ' ')
+}
 
 export async function fetchSinglePokemon(url:string):Promise<PokemonType> {
 	const res = await api.get<PokemonResponse>(url)
@@ -8,10 +19,13 @@ export async function fetchSinglePokemon(url:string):Promise<PokemonType> {
 		id, name, height, types, sprites, stats
 	} = res.data
 
+	const flavorText = await fetchPokemonFlavorText(id)
+
 	return {
 		id,
 		name,
 		height,
+		flavorText,
 		types: types.map(
 			type => type.type.name
 		),
@@ -33,7 +47,7 @@ export async function fetchPokemonList() {
 		next: string
 		prev: string | null
 		results: { url: string }[]
-	}>('/?offset=0&limit=30')
+	}>('/pokemon/?offset=0&limit=30')
 
 	const pokePromises = data.results.map(
 		res => fetchSinglePokemon(res.url)

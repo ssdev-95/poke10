@@ -1,3 +1,12 @@
+export interface FlavorTextResponse {
+	flavor_text_entries: {
+		flavor_text: string
+		language: {
+			name: string
+		}
+	}[]
+}
+
 export interface PokemonResponse {
   id: number
 	name: string
@@ -30,6 +39,8 @@ export interface PokemonResponse {
 }
 
 export type PokemonType = Pick<PokemonResponse, 'id'|'name'|'height'> & {
+	flavorText: string
+
 	types: string[]
 
 	sprites: {

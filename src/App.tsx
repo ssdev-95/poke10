@@ -14,21 +14,23 @@ export function App() {
   const client = new QueryClient()
 
   return (
-	  <QueryClientProvider client={client}>
-		  <ReactQueryDevtools initialIsOpen={false} />
-    	<BrowserRouter>
-  	  	<Routes>
-	  		  <Route
-  				  path="/"
-  				  element={<Home />}
-  			  />
+    <BrowserRouter>
+    	<Routes>
+  		  <Route
+				  path="/"
+					element={(
+					  <QueryClientProvider client={client}>
+							<ReactQueryDevtools initialIsOpen={false} />
+						  <Home />
+						</QueryClientProvider>
+					)}
+  			/>
 
-  		  	<Route
-		  		  path="/pokemon/:id"
-	  				element={<Pokemon />}
-  				/>
-  			</Routes>
-  		</BrowserRouter>
-		</QueryClientProvider>
+  			<Route
+				  path="/pokemon/:id"
+					element={<Pokemon />}
+				/>
+			</Routes>
+  	</BrowserRouter>
 	)
 }
